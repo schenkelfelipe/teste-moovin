@@ -4,7 +4,7 @@ Clone o repositório, instale as dependências e na raiz do diretório rode o se
 
 ### `concurrently "npm start" "nodemon backend/server.js"`
 
-Pode optar também por dar um start em cada um de uma vez em dois terminais de comando, um na raiz e outro na pasta backend.
+Ou se preferir, apenas dê um NPM START na raiz, abra outro terminal e aplique outro NPM START no diretório: backend.
 
 Isso fará com que o frontend e o backend sejam iniciados para que a aplicação funcione corretamente.
 Adicionei o concurrently ao projeto inicial para poder rodar ambos os comandos.
