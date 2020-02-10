@@ -1,10 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Clone o repositório, instale as dependências necessárias utilizando:
-
-### `npm install`
-
-E na raiz do diretório rode o seguinte comando caso possua o Concurrently.
+Clone o repositório, instale as dependências e na raiz do diretório rode o seguinte comando caso possua o Concurrently.
 
 ### `concurrently "npm start" "nodemon backend/server.js"`
 
