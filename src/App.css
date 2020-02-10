@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.image-moovin{
+	position:fixed;
+	bottom:5px;
+	right:10px;	
+}
+
+.saldo-atual{
+	background: lightgray;
+	padding: 3px;
+	margin-left: 10px;
 }
