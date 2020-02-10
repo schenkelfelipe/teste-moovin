@@ -43,6 +43,12 @@
 	right:10px;	
 }
 
+.rodape-explicativo{
+	position:fixed;
+	bottom:20px;
+	left:10px;	
+}
+
 .saldo-atual{
 	background: lightgray;
 	padding: 3px;

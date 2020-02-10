@@ -35,19 +35,25 @@ export default class CriarConta extends React.Component<any, any> {
   onSubmit(e: any) {
     e.preventDefault()
 	
-	const contaObject = {
-      codigo: this.state.codigo,
-      tipo_conta: this.state.tipoConta,
-      nome_responsavel: this.state.nomeResponsavel,
-	  saldo: 0
-    };
-    axios.post('http://localhost:4000/contas/criar-conta', contaObject)
-      .then(res => {
-		this.props.history.push('/lista-contas')
-	  })
-	  .catch(error => {
-		console.log(error)
-	});
+	if(this.state.codigo.trim() === ''){
+		window.alert('Preencha o código da conta');
+	} else if(this.state.nomeResponsavel.trim() === ''){
+		window.alert('Preencha o nome do responsável pela conta');
+	} else {
+		const contaObject = {
+		  codigo: this.state.codigo,
+		  tipo_conta: this.state.tipoConta,
+		  nome_responsavel: this.state.nomeResponsavel,
+		  saldo: 0
+		};
+		axios.post('http://localhost:4000/contas/criar-conta', contaObject)
+		  .then(res => {
+			this.props.history.push('/lista-contas')
+		  })
+		  .catch(error => {
+			console.log(error)
+		});
+	}
   }
 
   render() {

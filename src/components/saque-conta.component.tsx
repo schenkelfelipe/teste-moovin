@@ -94,6 +94,10 @@ export default class SaqueConta extends React.Component<any, any> {
         <Button size="sm" variant="primary" onClick={this.onSubmit} >
           Sacar
         </Button>
+		
+		<div className="rodape-explicativo">
+			* O saque deve considerar a taxa de 0,30 B$, caso o valor de saque exceda o valor do saldo + a taxa, o saque não ocorrerá.
+		</div>
       </Form>
     </div>);
   }

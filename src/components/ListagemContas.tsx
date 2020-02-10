@@ -11,12 +11,14 @@ export default class ListagemContas extends React.Component<any, any> {
     }
 	
 	deletarConta() {
-        axios.delete('http://localhost:4000/contas/deletar-conta/' + this.props.obj._id)
-            .then((res) => {
-                window.location.reload();
-            }).catch((error) => {
-                console.log(error)
-            })
+		if(window.confirm('Tem certeza que deseja apagar a conta?')){
+			axios.delete('http://localhost:4000/contas/deletar-conta/' + this.props.obj._id)
+				.then((res) => {
+					window.location.reload();
+				}).catch((error) => {
+					console.log(error)
+				})
+		}
     }
 	
     render() {
