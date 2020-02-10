@@ -44,19 +44,20 @@ export default class EditarConta extends React.Component<any, any> {
   onSubmit(e: any) {
     e.preventDefault()
 	
-	const contaObject = {
-      codigo: this.state.codigo,
-      tipo_conta: this.state.tipoConta,
-      nome_responsavel: this.state.nomeResponsavel
-    };
-    axios.put('http://localhost:4000/contas/atualizar-conta/' + this.props.match.params.id, contaObject)
-      .then((res) => {
-        console.log(res.data)
-      }).catch((error) => {
-        console.log(error)
-      })
-
-    this.props.history.push('/lista-contas')
+	if(this.state.nomeResponsavel.trim() === ''){
+		window.alert('Preencha o nome do responsável pela conta');
+	} else {
+		const contaObject = {
+		  tipo_conta: this.state.tipoConta,
+		  nome_responsavel: this.state.nomeResponsavel
+		};
+		axios.put('http://localhost:4000/contas/atualizar-conta/' + this.props.match.params.id, contaObject)
+		  .then((res) => {
+			this.props.history.push('/lista-contas')
+		  }).catch((error) => {
+			console.log(error)
+		  })
+	}
   }
 
   render() {
